@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(200, 200, 200);
+}
+
+header {
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.fa-brands {
+  font-size: 40px;
+}
+
+.search {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search > label {
+  font-weight: bold;
+}
+
+.search > input {
+  width: 20rem;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(231, 231, 231);
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.search > input:focus {
+  background-color: rgb(156, 156, 156);
+  color: white;
+}
+
+.search > input:focus::placeholder {
+  color: rgb(200, 200, 200);
+}
+
+#results {
+  flex-basis: 100%;
+  padding: 15px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+.song {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 150px;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+.song img {
+  width: 150px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.song-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.song-description h3 {
+  font-weight: bold;
+}
+
+.no-results {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+#loader {
+  width: 80px;
+  margin: 100px auto;
+  aspect-ratio: 0.75;
+  --c: no-repeat linear-gradient(#333 0 0);
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  background-size: 25% 75%;
+  animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
